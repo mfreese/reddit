@@ -14,7 +14,10 @@
      </td>
      <td>
        <%= post.vote %>
-     </td>
+      </td>
+      <td>
+        <%= link_to "vote" , vote_post_path(post) %>
+      </td>
      </tr>
 
      <% end %>

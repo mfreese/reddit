@@ -15,6 +15,14 @@ class PostsController < ApplicationController
     redirect_to
   end
 
+  def vote
+    @post = Post.find(params[:id])
+    @post.vote += 1
+    @post.save
+    redirect_to root_path
+  end
+
+
 
   def show
   end
