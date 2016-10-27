@@ -1,0 +1,21 @@
+
+<table class="table table-striped">
+  <tr>
+    <th>
+      Name
+    </th>
+     <th>Vote</th>
+   </tr>
+   <% @post.each do |post| %>
+    <tr>
+
+      <td>
+       <%= link_to post.name, post.link %>
+     </td>
+     <td>
+       <%= post.vote %>
+     </td>
+     </tr>
+
+     <% end %>
+</table>
