@@ -11,6 +11,8 @@ class PostsController < ApplicationController
   def create
     @post.name = params [:post][:name]
     @post.link = params [:post][:link]
+    @post.summary = params[:post][:summary]
+
     @post.vote = 1
     redirect_to
   end

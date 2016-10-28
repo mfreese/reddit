@@ -13,10 +13,18 @@
         <%= post.vote %>
      </td>
      <td>
-       <%= link_to post.name, link_vote_post_path(post) %>
+       <div>
+         <%= link_to post.name, link_vote_post_path(post) %>
+       </div>
+       <div class="col-m-5">
+
+       <%=  post.summary %>
+     </div>
       </td>
       <td>
-        <%= link_to "Like" , vote_post_path(post), class: "col-xs-3 btn btn-default btn-xs" %>
+        <div>
+        <%= link_to "Like" , vote_post_path(post), class: "col-xs-3 btn btn-default btn-xs like-button" %>
+      </div>
       </td>
      </tr>
 

@@ -11,7 +11,8 @@
   Post.create!(
   name: Faker::Superhero.name,
   link: Faker::Internet.url,
-  vote: rand(300..1000)
+  vote: rand(300..1000),
+  summary: Faker::ChuckNorris.fact
 
   )
 
