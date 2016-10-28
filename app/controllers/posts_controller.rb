@@ -22,6 +22,13 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def link_vote
+    @post= Post.find(params[:id])
+    @post.vote += 1
+    @post.save
+    redirect_to @post.link
+  end
+
 
 
   def show
