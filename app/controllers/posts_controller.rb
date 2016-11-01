@@ -9,12 +9,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post.name = params [:post][:name]
-    @post.link = params [:post][:link]
+    @post = Post.new
+    @post.name = params[:post][:name]
+    @post.link = params[:post][:link]
     @post.summary = params[:post][:summary]
-
     @post.vote = 1
-    redirect_to
+    @post.user= params[:post][:user]
+    @post.save!
+    redirect_to root_path
+
+
   end
 
   def vote
