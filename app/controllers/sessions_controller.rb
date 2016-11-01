@@ -3,6 +3,11 @@ class SessionsController < ApplicationController
   before_action  only: [:new, :create]
 
     def new
+      if current_user
+        flash[:warning] = "Your already logged in."
+        redirect_to :root
+      end
+
     end
 
     def create

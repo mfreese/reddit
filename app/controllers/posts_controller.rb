@@ -22,10 +22,15 @@ class PostsController < ApplicationController
   end
 
   def vote
+    if current_user
     @post = Post.find(params[:id])
     @post.vote += 1
     @post.save
     redirect_to root_path
+  else
+    flash[:warning] = "Must be logged in."
+    redirect_to :new_session
+    end
   end
 
   def link_vote

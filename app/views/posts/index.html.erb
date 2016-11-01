@@ -21,11 +21,13 @@
        <%=  post.summary %>
      </div>
       </td>
+      <% if current_user %>
       <td>
         <div>
-        <%= link_to "Like" , vote_post_path(post), class: "col-xs-3 btn btn-default btn-xs like-button" %>
+          <%= link_to "Like" , vote_post_path(post), class: "col-xs-3 btn btn-default btn-xs like-button" %>
       </div>
       </td>
+        <% end %>
      </tr>
 
      <% end %>
