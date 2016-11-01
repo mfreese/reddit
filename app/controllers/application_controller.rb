@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
+  helper_method :current_user
     def index
       @users = User.all
     end
@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
     def new
       @user = User.new
     end
-
+    def current_user
+      @user ||= User.find(session[:user_id]) if session[:user_id]
+    end
     def create
       @user = User.new(user_params)
       if @user.save
@@ -25,4 +27,4 @@ class ApplicationController < ActionController::Base
       params.require(:user).permit(:username, :email_address, :password)
     end
 
-  end
+end

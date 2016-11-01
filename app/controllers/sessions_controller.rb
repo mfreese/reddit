@@ -1,6 +1,6 @@
-class SesssionsController < ApplicationController
+class SessionsController < ApplicationController
 
-  before_action :forbid_login, only: [:new, :create]
+  before_action  only: [:new, :create]
 
     def new
     end
@@ -17,7 +17,7 @@ class SesssionsController < ApplicationController
           render :new
         end
       else
-        flash[:warning] = "Not valid user."
+        flash[:warning] = "Not a valid user."
         render :new
       end
     end

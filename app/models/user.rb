@@ -3,4 +3,4 @@ has_many :posts
 has_secure_password
 end
 
- validates :username, :email_address
+ # validates :username, :email_address
