@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     @post.vote = 1
     @post.user= params[:post][:user]
     @post.save!
+    tags= params[:post][:topic].split
     redirect_to root_path
 
 
